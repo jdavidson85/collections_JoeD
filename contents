@@ -1,0 +1,55 @@
+func organizeAndExtractData() {
+    // Dictionary 
+    var itemDetails: [String: Any] = [:]
+ 
+    // Array collection
+    var items: [[String: Any]] = []
+ 
+    // Add items
+    itemDetails["name"] = "iPhone"
+    itemDetails["category"] = "Electronics"
+    itemDetails["price"] = 1200.00
+    items.append(itemDetails)
+ 
+    itemDetails["name"] = "Playstation 5"
+    itemDetails["category"] = "Electronics"
+    itemDetails["price"] = 499.99
+    items.append(itemDetails)
+ 
+    itemDetails["name"] = "Frigerator"
+    itemDetails["category"] = "Appliances"
+    itemDetails["price"] = 3500.00
+    items.append(itemDetails)
+    
+    itemDetails["name"] = "Motorcycle"
+    itemDetails["category"] = "Vehicles"
+    itemDetails["price"] = 8500.00
+    items.append(itemDetails)
+ 
+    // Extracting
+    var itemNames: [String] = []
+    var itemCategories: [String] = []
+    var itemPrices: [Double] = []
+ 
+    for item in items {
+        if let name = item["name"] as? String {
+            itemNames.append(name)
+        }
+ 
+        if let category = item["category"] as? String {
+            itemCategories.append(category)
+        }
+ 
+        if let price = item["price"] as? Double {
+            itemPrices.append(price)
+        }
+    }
+ 
+    // Print data
+    print("Item Names: \(itemNames)")
+    print("Item Categories: \(itemCategories)")
+    print("Item Prices: \(itemPrices)")
+}
+ 
+
+organizeAndExtractData()
